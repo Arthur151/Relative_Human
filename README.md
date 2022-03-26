@@ -1,24 +1,23 @@
 <h1 align="center"> 
-  <img src="assets/RH_logo.png" width="20%" />
+  <img src="assets/RH_logo.png" width="40%" />
 </h1>
-<h2 align="center"> Relative depth & age in the wild. </h2>
 
-Relative Human (RH) contains the following annotations of **multi-person in-the-wild** RGB images:
- **Depth layers:** relative depth relationship/ordering between all people in the image.
- **Age group classfication:** adults, teenagers, kids, babies.
- Others: **Genders**, **Bounding box**, **2D pose**
+Relative Human (RH) contains **multi-person in-the-wild** RGB images with the annotations:  
+ - **Depth layers:** relative depth relationship/ordering between all people in the image.  
+ - **Age group classfication:** adults, teenagers, kids, babies.  
+ - Others: **Genders**, **Bounding box**, **2D pose**.  
 
 <p float="center">
-  <img src="assets/RH_demos.png" width="48%" />
-  <img src="assets/RH_skeletons.png" width="48%" />
+  <img src="assets/RH_demos.png" width="58%" />
+  <img src="assets/RH_skeletons.png" width="36%" />
 </p>
 
 It is introduced in CVPR 2022 paper [Putting People in their Place: Monocular Regression of 3D People in Depth](https://arxiv.org/abs/2112.08274).
 
 ## Download
 
-[Google drive]()
-[Baidu drive]()
+|[Google drive]()|  
+|[Baidu drive]()|
 
 ## Why do we need RH?
 
