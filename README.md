@@ -37,7 +37,7 @@ To use it for training, please refer to [BEV](https://github.com/Arthur151/ROMP)
 
 ## Re-implementation
 
-To re-implement RH results (in Tab. 1 of BEV paper), please first download the predictions from [here](all_results.zip), then 
+To re-implement RH results (in Tab. 1 of BEV paper), please first download the predictions from [here]([all_results.zip](https://github.com/Arthur151/Relative_Human/releases/download/Predictions/all_results.zip)), then 
 ```
 cd Relative_Human/
 # BEV / ROMP / CRMH : set the path of downloaded results (.npz) in RH_evaluation/evaluation.py, then run
