@@ -12,12 +12,12 @@ Relative Human (RH) contains **multi-person in-the-wild** RGB images with rich h
   <img src="assets/RH_skeletons.png" width="36%" />
 </p>
 
-It is introduced in CVPR 2022 paper [Putting People in their Place: Monocular Regression of 3D People in Depth](https://arxiv.org/abs/2112.08274).
+RH is introduced in CVPR 2022 paper [Putting People in their Place: Monocular Regression of 3D People in Depth](https://arxiv.org/abs/2112.08274).
 
 ## Download
 
 |[Google drive](https://drive.google.com/drive/folders/1mkUI8p7PMUgvBDilRvN01rD1rxCdqPHC?usp=sharing)|  
-|[Baidu drive]()|
+|[Baidu drive](https://pan.baidu.com/s/12z2rNU-Sex-LvS7AaV_Mfg?pwd=r3vh)|
 
 ## Why do we need RH?
 
