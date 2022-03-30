@@ -19,6 +19,10 @@ RH is introduced in CVPR 2022 paper [Putting People in their Place: Monocular Re
 |[Google drive](https://drive.google.com/drive/folders/1mkUI8p7PMUgvBDilRvN01rD1rxCdqPHC?usp=sharing)|  
 |[Baidu drive](https://pan.baidu.com/s/12z2rNU-Sex-LvS7AaV_Mfg?pwd=r3vh)|
 
+## Leaderboard
+
+See [Leaderboard](https://paperswithcode.com/sota/3d-depth-estimation-on-relative-human).
+
 ## Why do we need RH?
 
 <p float="center">
