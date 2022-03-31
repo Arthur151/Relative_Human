@@ -33,9 +33,9 @@ Existing 3D datasets are poor in diversity of age and multi-person scenories. In
 
 ## How to use it?
 
-We will provide a toolbox for data loading and evaluation. 
+We provide a toolbox for [data loading, visualization](demo.py), and [evaluation](RH_evaluation/evaluation.py). 
 
-Firstly, download the data and set the path in code.
+To run the demo code, please download the data and set the dataset_dir in [demo code](demo.py).
 
 To use it for training, please refer to [BEV](https://github.com/Arthur151/ROMP) for details.
 
