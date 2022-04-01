@@ -9,6 +9,7 @@ Relative Human (RH) contains **multi-person in-the-wild** RGB images with rich h
 
 <p float="center">
   <img src="assets/depth_layer.png" width="24%" />
+  <img src="assets/RH_demos.png" width="24%" />
   <img src="assets/RH_skeletons.png" width="36%" />
 </p>
 
