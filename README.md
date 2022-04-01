@@ -3,7 +3,7 @@
 </h1>
 
 Relative Human (RH) contains **multi-person in-the-wild** RGB images with rich human annotations, including:  
- - **Depth layers:** relative depth relationship/ordering between all people in the image.  
+ - **Depth layers (DLs):** relative depth relationship/ordering between all people in the image.  
  - **Age group classfication:** adults, teenagers, kids, babies.  
  - Others: **Genders**, **Bounding box**, **2D pose**.  
 

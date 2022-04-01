@@ -247,7 +247,7 @@ def visualize_3d(image, packed_annots, interactive_show=True):
         x = cx - crop_w / 2
         y = height-cy-crop_h/2
         depth_text = 'DL={}'.format(depth)
-        text = vedo.Text3D(depth_text, (x,y+crop_h,z),s=40,depth=0.2)
+        text = vedo.Text3D(depth_text, (cx-100,y+crop_h+100,z),s=40,depth=0.2)
         plt += text
 
         pic = vedo.Picture(skeleton_image[:,:,::-1])
