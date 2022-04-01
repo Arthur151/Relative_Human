@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 import os
+import copy
 
 dataset_dir = '/home/yusun/data_drive/dataset/Relative_human'
 image_folder = os.path.join(dataset_dir, 'images')
@@ -180,7 +181,7 @@ def draw_skeleton_multiperson(image, pts_group, skeletons, colors=None):
         image = draw_skeleton(image, kp2d, bones=All54_connMat, cm=color)
     return image
 
-def visualize(image, packed_annots):
+def visualize_2d(image, packed_annots):
     kp2ds_info, bboxes, meta_info = packed_annots
     kp2ds, skeletons = [kp[0] for kp in kp2ds_info], [kp[1] for kp in kp2ds_info] 
     vboxes = np.array([bbox[0] for bbox in bboxes]).astype(np.int)
@@ -188,23 +189,75 @@ def visualize(image, packed_annots):
     colors = np.array([color_table[i%len(color_table)] for i in range(len(kp2ds))])
     skeleton_image = draw_skeleton_multiperson(image, kp2ds, skeletons, colors=colors)
     for ind, vbox in enumerate(vboxes):
-        cv2.rectangle(image, tuple(vbox[:2]), tuple(vbox[2:]), tuple(colors[ind]), 2)
+        #cv2.rectangle(image, tuple(vbox[:2]), tuple(vbox[2:]), tuple(colors[ind]), 2)
         depth, age, gender = meta_info[ind]
         info = 'D{}, {}, {}'.format(depth, name_dict['age'][age], name_dict['gender'][gender])
         cv2.putText(image, info, tuple(vbox[:2]+np.array([0,24])), cv2.FONT_HERSHEY_COMPLEX, 1, tuple(colors[ind]), 2)
     cv2.imshow('skeleton', skeleton_image)
     cv2.waitKey(0)
 
+def calc_crop_bbox(kp2ds, expand_ratio=np.array([1.1,1.2])):
+    vis_masks = (kp2ds>0).sum(-1)>1
+    bboxes = np.zeros((len(kp2ds), 3, 2), dtype=np.int)
+    for ind, kp2d in enumerate(kp2ds):
+        left = kp2d[vis_masks[ind],0].min()
+        right = kp2d[vis_masks[ind],0].max()
+        top = kp2d[vis_masks[ind],1].min()
+        bottom = kp2d[vis_masks[ind],1].max()
+        center = np.array([(left+right)/2, (top+bottom)/2])
+        width_height = np.array([right-left,bottom-top])*expand_ratio
+        ltrbxy = np.array([center-width_height/2, center+width_height/2, center])
+        bboxes[ind] = ltrbxy
+    return bboxes
+
+def visualize_3d(image, packed_annots, interactive_show=True):
+    try:
+        import vedo
+    except:
+        os.system('pip install vedo')
+        import vedo
+    plt = vedo.Plotter(bg=[240,255,255], axes=1, offscreen=not interactive_show)
+    kp2ds_info, bboxes, meta_info = packed_annots
+    if kp2ds_info[0][0] is None:
+        return 
+    kp2ds = np.array([kp[0] for kp in kp2ds_info])
+    skeletons = [kp[1] for kp in kp2ds_info] 
+    bboxes = calc_crop_bbox(kp2ds)
+    colors = np.array([color_table[i%len(color_table)] for i in range(len(kp2ds))])
+
+    height = image.shape[0]
+    depth_interval = 300
+    pic = vedo.Picture(image[:,:,::-1])
+    pic.z(-(meta_info[:,0].max()+1)*depth_interval)
+    plt += pic
+
+    for ind, bbox in enumerate(bboxes):
+        (l, t), (r, b), (cx, cy) = bbox[0], bbox[1], bbox[2]
+        crop_image_patch = copy.deepcopy(image[t:b,l:r])
+        kp2d = kp2ds[ind]
+        kp2d[:,0] -= l
+        kp2d[:,1] -= t
+        skeleton_image = draw_skeleton_multiperson(crop_image_patch, [kp2d], [skeletons[ind]], colors=[colors[ind]])
+        depth, age, gender = meta_info[ind]
+        #info = '{}, {}'.format(name_dict['age'][age], name_dict['gender'][gender])
+        #cv2.putText(skeleton_image, info, (30,30), cv2.FONT_HERSHEY_COMPLEX, 1, tuple(colors[ind]), 2)
+        pic = vedo.Picture(skeleton_image[:,:,::-1])
+        pic.z(-depth*depth_interval).x(cx).y(height-cy)
+        plt += pic
+    plt.show()
+    plt.close()
+
 def main():
     annots = load_annots(dataset_dir, split_name='train')
-    for example_image_name in ['6849513.jpg','6182308.jpg']: #list(annots.keys())
+    for example_image_name in ['6182308.jpg']: #list(annots.keys())
         print(example_image_name)
         packed_annots = prepare_annots(annots[example_image_name], example_image_name)
         #print_annots_info(packed_annots)
 
         if visualiztion:
             image = load_image(example_image_name)
-            visualize(image, packed_annots)
+            visualize_2d(copy.deepcopy(image), packed_annots)
+            visualize_3d(copy.deepcopy(image), packed_annots)
 
 if __name__ == '__main__':
     main()
