@@ -9,8 +9,8 @@ Relative Human (RH) contains **multi-person in-the-wild** RGB images with rich h
 
 <p float="center">
   <img src="assets/depth_layer.png" width="24%" />
-  <img src="assets/RH_demos.png" width="24%" />
   <img src="assets/RH_skeletons.png" width="36%" />
+  <img src="assets/RH_demos.png" width="46%" />
 </p>
 
 RH is introduced in CVPR 2022 paper [Putting People in their Place: Monocular Regression of 3D People in Depth](https://arxiv.org/abs/2112.08274).
