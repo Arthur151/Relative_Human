@@ -216,7 +216,7 @@ def visualize_3d(image, packed_annots, interactive_show=True):
     except:
         os.system('pip install vedo')
         import vedo
-    plt = vedo.Plotter(bg=[240,255,255], axes=1, offscreen=not interactive_show)
+    plt = vedo.Plotter(bg=[255,255,255], axes=1, offscreen=not interactive_show)
     kp2ds_info, bboxes, meta_info = packed_annots
     if kp2ds_info[0][0] is None:
         return 
