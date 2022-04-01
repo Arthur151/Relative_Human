@@ -241,9 +241,19 @@ def visualize_3d(image, packed_annots, interactive_show=True):
         depth, age, gender = meta_info[ind]
         #info = '{}, {}'.format(name_dict['age'][age], name_dict['gender'][gender])
         #cv2.putText(skeleton_image, info, (30,30), cv2.FONT_HERSHEY_COMPLEX, 1, tuple(colors[ind]), 2)
+        
+        crop_h, crop_w = crop_image_patch.shape[:2]
+        z = -depth*depth_interval
+        x = cx - crop_w / 2
+        y = height-cy-crop_h/2
+        depth_text = 'DL={}'.format(depth)
+        text = vedo.Text3D(depth_text, (x,y+crop_h,z),s=40,depth=0.2)
+        plt += text
+
         pic = vedo.Picture(skeleton_image[:,:,::-1])
-        pic.z(-depth*depth_interval).x(cx).y(height-cy)
+        pic.z(z).x(x).y(y)
         plt += pic
+        
     plt.show()
     plt.close()
 
