@@ -60,8 +60,8 @@ Please cite our paper if you use RH in your research.
 ```bibtex
 @InProceedings{sun2022BEV,
 author = {Sun, Yu and Liu, Wu and Bao, Qian and Fu, Yili and Mei, Tao and Black, Michael J},
-title = {Putting People in their Place: Monocular Regression of 3D People in Depth},
-booktitle = {CVPR},
+title = {Putting People in their Place: Monocular Regression of {3D} People in Depth}, 
+booktitle = {IEEE/CVF Conf.~on Computer Vision and Pattern Recognition (CVPR)}, 
 year = {2022}
 }
 ```
