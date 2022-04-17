@@ -8,17 +8,19 @@ Relative Human (RH) contains **multi-person in-the-wild** RGB images with rich h
  - Others: **Genders**, **Bounding box**, **2D pose**.  
 
 <p float="center">
-  <img src="assets/depth_layer.png" width="24%" />
-  <img src="assets/RH_skeletons.png" width="36%" />
+  <img src="assets/depth_layer.png" width="20%" />
   <img src="assets/RH_demos.png" width="46%" />
+  <img src="assets/RH_skeletons.png" width="30%" />
 </p>
 
 RH is introduced in CVPR 2022 paper [Putting People in their Place: Monocular Regression of 3D People in Depth](https://arxiv.org/abs/2112.08274).
 
+[[project page]](https://arthur151.github.io/BEV/BEV.html) [[BEV code]](https://github.com/Arthur151/ROMP)
+
 ## Download
 
-|[Google drive](https://drive.google.com/drive/folders/1mkUI8p7PMUgvBDilRvN01rD1rxCdqPHC?usp=sharing)|  
-|[Baidu drive](https://pan.baidu.com/s/12z2rNU-Sex-LvS7AaV_Mfg?pwd=r3vh)|
+[[Google drive]](https://drive.google.com/drive/folders/1mkUI8p7PMUgvBDilRvN01rD1rxCdqPHC?usp=sharing)   
+[[Baidu drive]](https://pan.baidu.com/s/12z2rNU-Sex-LvS7AaV_Mfg?pwd=r3vh)  
 
 ## Leaderboard
 
