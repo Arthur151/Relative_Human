@@ -15,7 +15,7 @@ Relative Human (RH) contains **multi-person in-the-wild** RGB images with rich h
 
 RH is introduced in CVPR 2022 paper [Putting People in their Place: Monocular Regression of 3D People in Depth](https://arxiv.org/abs/2112.08274).
 
-[[project page]](https://arthur151.github.io/BEV/BEV.html) [[BEV code]](https://github.com/Arthur151/ROMP)
+ **[[Project Page]](https://arthur151.github.io/BEV/BEV.html) [[Video]](https://youtu.be/Q62fj_6AxRI) [[BEV Code]](https://github.com/Arthur151/ROMP)**
 
 ## Download
 
