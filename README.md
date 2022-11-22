@@ -19,7 +19,7 @@ RH is introduced in CVPR 2022 paper [Putting People in their Place: Monocular Re
 
 ## Download
 
-[[Google drive]](https://drive.google.com/drive/folders/1mkUI8p7PMUgvBDilRvN01rD1rxCdqPHC?usp=sharing)   
+[[Google drive]](https://drive.google.com/drive/folders/1S6nOFmljodRsB0TFx4aIzssQ0NJ3xXCm?usp=share_link)   
 [[Baidu drive]](https://pan.baidu.com/s/12z2rNU-Sex-LvS7AaV_Mfg?pwd=r3vh)  
 
 ## Leaderboard
